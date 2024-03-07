@@ -1,4 +1,4 @@
-import './index.jsx'
+import './index.css'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
