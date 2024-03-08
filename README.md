@@ -42,3 +42,6 @@ $ npm install react-router-dom
 ```shell
 $  npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-fontawesome
 ```
+```shell
+$  npm install @reduxjs/toolkit react-redux
+```
