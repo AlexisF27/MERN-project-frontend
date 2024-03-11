@@ -45,3 +45,7 @@ $  npm install @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-ico
 ```shell
 $  npm install @reduxjs/toolkit react-redux
 ```
+```shell
+$  npm install prop-types
+```
+
