@@ -8,7 +8,6 @@ import ReactDOM from 'react-dom/client'
 import { store } from './app/store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
@@ -16,5 +15,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Routes>
       </BrowserRouter>
     </Provider>
-  </BrowserRouter>
 )
