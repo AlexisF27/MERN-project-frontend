@@ -26,6 +26,7 @@ export const notesApiSlice = apiSlice.injectEndpoints({
               });
               return notesAdapter.setAll(initialState, loadedNotes)
           },
+          // eslint-disable-next-line no-unused-vars
           providesTags: (result, error, arg) => {
               if (result?.ids) {
                   return [
