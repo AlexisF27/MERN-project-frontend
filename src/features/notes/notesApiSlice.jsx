@@ -13,29 +13,32 @@ const initialState = notesAdapter.getInitialState()
 
 export const notesApiSlice = apiSlice.injectEndpoints({
   endpoints: builder => ({
-      getNotes: builder.query({
-          query: () => '/notes',
-          validateStatus: (response, result) => {
-              return response.status === 200 && !result.isError
-          },
-          keepUnusedDataFor: 5,
-          transformResponse: responseData => {
-              const loadedNotes = responseData.map(note => {
-                  note.id = note._id
-                  return note
-              });
-              return notesAdapter.setAll(initialState, loadedNotes)
-          },
-          // eslint-disable-next-line no-unused-vars
-          providesTags: (result, error, arg) => {
-              if (result?.ids) {
-                  return [
-                      { type: 'Note', id: 'LIST' },
-                      ...result.ids.map(id => ({ type: 'Note', id }))
-                  ]
-              } else return [{ type: 'Note', id: 'LIST' }]
-          }
-      }),
+    getNotes: builder.query({
+      query: () => '/notes',
+      validateStatus: (response, result) => {
+        return response.status === 200 && !result.isError
+      },
+      keepUnusedDataFor: 5,
+      transformResponse: responseData => {
+        console.log("-----");
+        const loadedNotes = responseData.map(note => {
+          console.log("-----");
+
+          note.id = note._id
+          return note
+        });
+        return notesAdapter.setAll(initialState, loadedNotes)
+      },
+      // eslint-disable-next-line no-unused-vars
+      providesTags: (result, error, arg) => {
+        if (result?.ids) {
+          return [
+            { type: 'Note', id: 'LIST' },
+            ...result.ids.map(id => ({ type: 'Note', id }))
+          ]
+        } else return [{ type: 'Note', id: 'LIST' }]
+      }
+    }),
   }),
 })
 
