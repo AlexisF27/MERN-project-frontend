@@ -23,6 +23,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
               });
               return usersAdapter.setAll(initialState, loadedUsers)
           },
+          // eslint-disable-next-line no-unused-vars
           providesTags: (result, error, arg) => {
               if (result?.ids) {
                   return [
