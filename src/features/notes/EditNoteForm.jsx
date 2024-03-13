@@ -162,8 +162,8 @@ const EditNoteForm = ({ note, users }) => {
 }
 
 EditNoteForm.propTypes = {
-  users: PropTypes.array.isRequired, // String is required
-  note: PropTypes.obj.isRequired, // String is required
+  users: PropTypes.array, // String is required
+  note: PropTypes.obj, // String is required
 };
 
 
