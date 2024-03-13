@@ -41,11 +41,13 @@ const EditNoteForm = ({ note, users }) => {
 
     const onTitleChanged = e => setTitle(e.target.value)
     const onTextChanged = e => setText(e.target.value)
+    // eslint-disable-next-line no-unused-vars
     const onCompletedChanged = e => setCompleted(prev => !prev)
     const onUserIdChanged = e => setUserId(e.target.value)
 
     const canSave = [title, text, userId].every(Boolean) && !isLoading
 
+    // eslint-disable-next-line no-unused-vars
     const onSaveNoteClicked = async (e) => {
         if (canSave) {
             await updateNote({ id: note.id, user: userId, title, text, completed })
