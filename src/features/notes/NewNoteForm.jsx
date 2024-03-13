@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import PropTypes from 'prop-types';
 import { faSave } from "@fortawesome/free-solid-svg-icons"
 import { useAddNewNoteMutation } from "./notesApiSlice"
 import { useNavigate } from "react-router-dom"
@@ -112,5 +113,9 @@ const NewNoteForm = ({ users }) => {
 
     return content
 }
+
+NewNoteForm.propTypes = {
+  users: PropTypes.array.isRequired, // String is required
+};
 
 export default NewNoteForm
